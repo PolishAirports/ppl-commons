@@ -1,0 +1,30 @@
+plugins {
+    id 'groovy'
+}
+
+group = 'pl.ppl'
+version = '0.0.1-SNAPSHOT'
+
+sourceCompatibility = '1.8'
+
+ext {
+    spockVersion = '1.0-groovy-2.4'
+    springBootVersion = '1.1.12.RELEASE'
+}
+
+dependencies {
+    compile 'org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final'
+    compile 'org.springframework.data:spring-data-jpa:1.8.1.RELEASE'
+
+    testCompile 'com.h2database:h2:1.4.187'
+    testCompile 'org.codehaus.groovy:groovy-all:2.4.4'
+    testCompile "org.spockframework:spock-core:$spockVersion"
+    testRuntime "org.spockframework:spock-spring:$spockVersion"
+    testCompile "org.springframework.boot:spring-boot-starter-data-jpa:$springBootVersion"
+    testCompile "org.springframework.boot:spring-boot-starter-test:$springBootVersion"
+}
+
+repositories {
+    mavenLocal()
+    jcenter()
+}
