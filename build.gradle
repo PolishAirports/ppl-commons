@@ -1,9 +1,11 @@
 plugins {
     id 'groovy'
+    id 'maven-publish'
+    id 'com.jfrog.bintray' version '1.3.1'
 }
 
 group = 'pl.ppl'
-version = '0.0.1-SNAPSHOT'
+version = '0.0.1'
 
 sourceCompatibility = '1.8'
 
@@ -28,3 +30,26 @@ repositories {
     mavenLocal()
     jcenter()
 }
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+}
+
+bintray {
+    user = System.getenv('BINTRAY_USER')
+    key = System.getenv('BINTRAY_KEY')
+    publications = ['mavenJava']
+    pkg {
+        repo = 'ppl-commons'
+        name = project.name
+        userOrg = 'ppl'
+        vcsUrl = 'https://github.com/PolishAirports/ppl-commons.git'
+        licenses = ['Apache-2.0']
+    }
+}
+
+bintrayUpload.dependsOn 'build'
