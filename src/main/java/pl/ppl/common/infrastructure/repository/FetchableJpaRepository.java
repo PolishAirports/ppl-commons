@@ -10,11 +10,11 @@ import java.io.Serializable;
 public interface FetchableJpaRepository<T, ID extends Serializable> extends JpaRepository<T, ID> {
 
     /**
-     * Retrieves an entity by its id or thorws EntityNotFoundException if such entity does not exists.
+     * Retrieves an entity by its id or throws {@code EntityNotFoundException} if such entity does not exists.
      *
-     * Please bare in mind that Spring Framework automatically translates EntityNotFoundException into JpaObjectRetrievalFailureException.
+     * Please bare in mind that Spring Framework automatically translates {@code EntityNotFoundException} into {@code JpaObjectRetrievalFailureException}.
      *
-     * @param id must not be {@literal null}.
+     * @param id must not be {@code null}.
      * @return the entity with the given id
      * @throws EntityNotFoundException if entity with the given id does not exists
      */
