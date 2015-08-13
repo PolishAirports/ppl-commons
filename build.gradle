@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'pl.ppl'
-version = '0.0.2'
+version = '0.0.3-SNAPSHOT'
 
 sourceCompatibility = '1.8'
 
@@ -59,6 +59,8 @@ bintray {
         repo = 'ppl-commons'
         name = project.name
         userOrg = 'ppl-os'
+        websiteUrl = 'https://github.com/PolishAirports/ppl-commons'
+        issueTrackerUrl = 'https://github.com/PolishAirports/ppl-commons/issues'
         vcsUrl = 'https://github.com/PolishAirports/ppl-commons.git'
         licenses = ['Apache-2.0']
     }
