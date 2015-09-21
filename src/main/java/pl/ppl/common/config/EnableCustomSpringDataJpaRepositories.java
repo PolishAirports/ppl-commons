@@ -12,4 +12,9 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @EnableJpaRepositories(repositoryFactoryBeanClass = FetchableJpaRepositoryFactoryBean.class)
 public @interface EnableCustomSpringDataJpaRepositories {
+
+    /**
+     * Base packages to scan for annotated components.
+     */
+    Class<?>[] basePackageClasses() default {};
 }

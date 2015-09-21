@@ -6,6 +6,6 @@ import pl.ppl.common.config.EnableCustomSpringDataJpaRepositories
 
 @Configuration
 @EnableAutoConfiguration
-@EnableCustomSpringDataJpaRepositories
+@EnableCustomSpringDataJpaRepositories(basePackageClasses = CustomerRepository.class)
 class RepositoriesConfig {
 }
