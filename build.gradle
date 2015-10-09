@@ -25,7 +25,7 @@ ext {
 
 dependencies {
     compile 'org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final'
-    compile 'org.springframework.data:spring-data-jpa:1.8.1.RELEASE'
+    compile 'org.springframework.data:spring-data-jpa:1.9.0.RELEASE'
 
     testCompile 'com.h2database:h2:1.4.187'
     testCompile 'org.codehaus.groovy:groovy-all:2.4.4'
