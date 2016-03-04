@@ -1,14 +1,21 @@
 package pl.ppl.common.infrastructure.repository
 
-import groovy.transform.EqualsAndHashCode
+import groovy.transform.ToString
 
-import javax.persistence.Entity
-import javax.persistence.Id
+import javax.persistence.*
 
 @Entity
-@EqualsAndHashCode
+//@EqualsAndHashCode
+@NamedEntityGraph(name = "Customer.withNicknames",
+        attributeNodes = @NamedAttributeNode("nicknames"))
+@ToString
 class Customer {
 
     @Id
     Long id
+
+    String name
+
+    @ElementCollection
+    Collection<String> nicknames;
 }

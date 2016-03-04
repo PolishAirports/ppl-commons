@@ -1,4 +1,6 @@
 package pl.ppl.common.infrastructure.repository
 
-interface CustomerRepository extends FetchableJpaRepository<Customer, Long> {
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor
+
+interface CustomerRepository extends FetchableJpaRepository<Customer, Long>, JpaSpecificationExecutor<Customer> {
 }
