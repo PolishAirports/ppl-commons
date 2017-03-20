@@ -13,6 +13,10 @@ import java.io.Serializable;
 public class FetchableJpaRepositoryFactoryBean<R extends JpaRepository<T, ID>, T, ID extends Serializable>
         extends JpaRepositoryFactoryBean<R, T, ID> {
 
+    public FetchableJpaRepositoryFactoryBean(Class<? extends R> repositoryInterface) {
+        super(repositoryInterface);
+    }
+
     @Override
     protected RepositoryFactorySupport createRepositoryFactory(EntityManager em) {
         return new FetchableJpaRepositoryFactory(em);

@@ -22,12 +22,12 @@ sourceCompatibility = '1.8'
 
 ext {
     spockVersion = '1.0-groovy-2.4'
-    springBootVersion = '1.1.12.RELEASE'
+    springBootVersion = '1.5.2.RELEASE'
 }
 
 dependencies {
     compile 'org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final'
-    compile 'org.springframework.data:spring-data-jpa:1.9.0.RELEASE'
+    compile 'org.springframework.data:spring-data-jpa:1.11.1.RELEASE'
 
     testCompile 'com.h2database:h2:1.4.187'
     testCompile 'org.codehaus.groovy:groovy-all:2.4.4'
